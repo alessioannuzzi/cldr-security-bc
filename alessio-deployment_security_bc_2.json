@@ -1,0 +1,3163 @@
+{
+  "timestamp" : "2018-06-15T11:42:12.969Z",
+  "clusters" : [ {
+    "name" : "cluster2",
+    "displayName" : "Key Trustee Server Cluster",
+    "version" : "CDH5",
+    "fullVersion" : "5.0.0",
+    "services" : [ {
+      "name" : "keytrustee_server",
+      "type" : "KEYTRUSTEE_SERVER",
+      "config" : {
+        "items" : [ ]
+      },
+      "roles" : [ {
+        "name" : "keyt4b5fbce2-KEYTRUSTEE_ACTIVE_SERVER-fcb9482268812a24b0b714c8a3",
+        "type" : "KEYTRUSTEE_ACTIVE_SERVER",
+        "hostRef" : {
+          "hostId" : "87ca6e39-5539-4aa8-90ca-2be10c8ab98d"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "aidnwheyxb1fpyb4x9nl6008v",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "keytrustee_server-KEYTRUSTEE_ACTIVE_SERVER-BASE"
+        }
+      }, {
+        "name" : "keyt4b5fbce2-KEYTRUSTEE_PASSIVE_SERVER-ccff006bb42e30261a5dfc449",
+        "type" : "KEYTRUSTEE_PASSIVE_SERVER",
+        "hostRef" : {
+          "hostId" : "45d0c250-e977-41b4-bda5-b3894cf12541"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "1coa93hzlfqflyapgluxrsprh",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "keytrustee_server-KEYTRUSTEE_PASSIVE_SERVER-BASE"
+        }
+      }, {
+        "name" : "keytrustee_server-DB_ACTIVE-fcb9482268812a24b0b714c8a34fbd9f",
+        "type" : "DB_ACTIVE",
+        "hostRef" : {
+          "hostId" : "87ca6e39-5539-4aa8-90ca-2be10c8ab98d"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "2yg0z9k6r765uydclytdncd07",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "keytrustee_server-DB_ACTIVE-BASE"
+        }
+      }, {
+        "name" : "keytrustee_server-DB_PASSIVE-ccff006bb42e30261a5dfc4490d14ae9",
+        "type" : "DB_PASSIVE",
+        "hostRef" : {
+          "hostId" : "45d0c250-e977-41b4-bda5-b3894cf12541"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "4iyrrgh0v8i13ydphr4k7vlcf",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "keytrustee_server-DB_PASSIVE-BASE"
+        }
+      } ],
+      "displayName" : "Key Trustee Server",
+      "roleConfigGroups" : [ {
+        "name" : "keytrustee_server-DB_ACTIVE-BASE",
+        "displayName" : "Active Database Default Group",
+        "roleType" : "DB_ACTIVE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster2",
+          "serviceName" : "keytrustee_server"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "keytrustee_server-DB_PASSIVE-BASE",
+        "displayName" : "Passive Database Default Group",
+        "roleType" : "DB_PASSIVE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster2",
+          "serviceName" : "keytrustee_server"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "keytrustee_server-KEYTRUSTEE_ACTIVE_SERVER-BASE",
+        "displayName" : "Active Key Trustee Server Default Group",
+        "roleType" : "KEYTRUSTEE_ACTIVE_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster2",
+          "serviceName" : "keytrustee_server"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "ssl_server_ca_certificate_location",
+            "value" : "/opt/cloudera/security/pki/rootca.pem",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_certificate_location",
+            "value" : "/opt/cloudera/security/pki/agent.pem",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_privatekey_location",
+            "value" : "/opt/cloudera/security/pki/agent.key",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_privatekey_password",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      }, {
+        "name" : "keytrustee_server-KEYTRUSTEE_PASSIVE_SERVER-BASE",
+        "displayName" : "Passive Key Trustee Server Default Group",
+        "roleType" : "KEYTRUSTEE_PASSIVE_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster2",
+          "serviceName" : "keytrustee_server"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "ssl_server_ca_certificate_location",
+            "value" : "/opt/cloudera/security/pki/rootca.pem",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_certificate_location",
+            "value" : "/opt/cloudera/security/pki/agent.pem",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_privatekey_location",
+            "value" : "/opt/cloudera/security/pki/agent.key",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_privatekey_password",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      } ]
+    } ],
+    "parcels" : [ {
+      "product" : "KEYTRUSTEE_SERVER",
+      "version" : "5.14.0-1.keytrustee5.14.0.p0.208456",
+      "stage" : "DISTRIBUTED",
+      "clusterRef" : {
+        "clusterName" : "cluster2"
+      }
+    }, {
+      "product" : "KEYTRUSTEE_SERVER",
+      "version" : "5.14.0-1.keytrustee5.14.0.p0.208456",
+      "stage" : "ACTIVATED",
+      "clusterRef" : {
+        "clusterName" : "cluster2"
+      }
+    } ],
+    "uuid" : "55121803-0142-4c3a-b39b-fc6a40275a8b"
+  }, {
+    "name" : "cluster",
+    "displayName" : "Cluster 1",
+    "version" : "CDH5",
+    "fullVersion" : "5.14.2",
+    "services" : [ {
+      "name" : "zookeeper",
+      "type" : "ZOOKEEPER",
+      "config" : {
+        "items" : [ {
+          "name" : "enableSecurity",
+          "value" : "true",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "zookeeper-SERVER-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "SERVER",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "d0gzjehdbb9aq3hev43hbkh5i",
+            "sensitive" : true
+          }, {
+            "name" : "serverId",
+            "value" : "3",
+            "sensitive" : false
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "zookeeper-SERVER-BASE"
+        }
+      }, {
+        "name" : "zookeeper-SERVER-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "SERVER",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "28jm0qbgt4l46eyoiib78lp6m",
+            "sensitive" : true
+          }, {
+            "name" : "serverId",
+            "value" : "2",
+            "sensitive" : false
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "zookeeper-SERVER-BASE"
+        }
+      }, {
+        "name" : "zookeeper-SERVER-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "SERVER",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "7s34v3tbwslc934qyzowsczbx",
+            "sensitive" : true
+          }, {
+            "name" : "serverId",
+            "value" : "1",
+            "sensitive" : false
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "zookeeper-SERVER-BASE"
+        }
+      } ],
+      "displayName" : "ZooKeeper",
+      "roleConfigGroups" : [ {
+        "name" : "zookeeper-SERVER-BASE",
+        "displayName" : "Server Default Group",
+        "roleType" : "SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "zookeeper"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "dataDir",
+            "value" : "/data/var/lib/zookeeper",
+            "sensitive" : false
+          }, {
+            "name" : "dataLogDir",
+            "value" : "/data/var/lib/zookeeper",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "zk_server_log_dir",
+            "value" : "/data/var/log/zookeeper",
+            "sensitive" : false
+          }, {
+            "name" : "zookeeper_server_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "keytrustee",
+      "type" : "KEYTRUSTEE",
+      "config" : {
+        "items" : [ {
+          "name" : "hadoop_kms_authentication_signer_secret_provider_zookeeper_auth_type",
+          "value" : "sasl",
+          "sensitive" : false
+        }, {
+          "name" : "hadoop_kms_authentication_type",
+          "value" : "kerberos",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "keytrustee-KMS_KEYTRUSTEE-0e05a34608ac7310b43fed540838f559",
+        "type" : "KMS_KEYTRUSTEE",
+        "hostRef" : {
+          "hostId" : "d0b10964-2b9e-4b37-8b7c-29e69fc70155"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "4ygz0a3d66tqljii3bnnv94m1",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "keytrustee-KMS_KEYTRUSTEE-BASE"
+        }
+      }, {
+        "name" : "keytrustee-KMS_KEYTRUSTEE-a1bc4af260103504f58006fc9668edec",
+        "type" : "KMS_KEYTRUSTEE",
+        "hostRef" : {
+          "hostId" : "d0f49d57-7e39-4851-8aa8-4e6bfcf60908"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "2sr9x45artqqid4nenx88uo1h",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "keytrustee-KMS_KEYTRUSTEE-BASE"
+        }
+      } ],
+      "displayName" : "Key Trustee KMS",
+      "roleConfigGroups" : [ {
+        "name" : "keytrustee-KMS_KEYTRUSTEE-BASE",
+        "displayName" : "Key Management Server Proxy Default Group",
+        "roleType" : "KMS_KEYTRUSTEE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "keytrustee"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "cloudera_trustee_keyprovider_auth",
+            "value" : "hu5sWkr4q1Jwlcvjm+ZkYg==",
+            "sensitive" : true
+          }, {
+            "name" : "cloudera_trustee_keyprovider_hostname-ACTIVE",
+            "value" : "ip-172-31-41-182.eu-west-1.compute.internal",
+            "sensitive" : false
+          }, {
+            "name" : "cloudera_trustee_keyprovider_hostname-PASSIVE",
+            "value" : "ip-172-31-46-237.eu-west-1.compute.internal",
+            "sensitive" : false
+          }, {
+            "name" : "cloudera_trustee_keyprovider_org",
+            "value" : "cloudera",
+            "sensitive" : false
+          }, {
+            "name" : "kms-acls.xml_role_safety_valve",
+            "value" : "<!--\n  KMS ACLs control which users can perform various actions on the KMS,\n  and which users and groups have access to which keys.\n\n  This file has the following sections:\n  * ACLs for KMS operations\n  ** Access to specific KMS operations\n  ** Blacklists for those specific operations\n  * ACLs for keys\n  ** Default ACLs for keys\n  ** Whitelist ACLs for keys\n  ** Key-specific ACLs\n-->\n\n<!--\n  KMS ACLs that govern access to specific key operations. If access is not\n  granted for an operation here, then the operation is forbidden, even if\n  a key ACL allows it.\n\n  The ACL value should be either a username or a username and group name\n  separated by whitespace.\n\n  An empty value for an ACL indicates that no user is granted access to that\n  operation. A value of \"*\" (for the username or groupname) indicates that\n  all users are granted access to that operation. Any operation for which\n  there is no ACL will be treated as having an ACL with a value of \"*\".\n-->\n\n<property>\n  <name>hadoop.kms.acl.CREATE</name>\n  <value>nobody sentryadmin</value>\n  <description>\n    ACL for create-key operations.\n    If the user is not in the GET ACL, the key material is not returned\n    as part of the response.\n  </description>\n</property>\n\n<property>\n  <name>hadoop.kms.acl.DELETE</name>\n  <value>nobody sentryadmin</value>\n  <description>\n    ACL for delete-key operations.\n  </description>\n</property>\n\n<property>\n  <name>hadoop.kms.acl.ROLLOVER</name>\n  <value>nobody sentryadmin</value>\n  <description>\n    ACL for rollover-key operations.\n    If the user does is not in the GET ACL, the key material is not returned\n    as part of the response.\n  </description>\n</property>\n\n<property>\n  <name>hadoop.kms.acl.GET</name>\n  <value></value>\n  <description>\n    ACL for get-key-version and get-current-key operations.\n  </description>\n</property>\n\n<property>\n  <name>hadoop.kms.acl.GET_KEYS</name>\n  <value>nobody sentryadmin</value>\n  <description>\n    ACL for get-keys operations.\n  </description>\n</property>\n\n<property>\n  <name>hadoop.kms.acl.SET_KEY_MATERIAL</name>\n  <value></value>\n  <description>\n    Complementary ACL for CREATE and ROLLOVER operations to allow the client\n    to provide the key material when creating or rolling a key.\n  </description>\n</property>\n\n<property>\n  <name>hadoop.kms.acl.GENERATE_EEK</name>\n  <value>hdfs supergroup</value>\n  <description>\n    ACL for generateEncryptedKey CryptoExtension operations.\n  </description>\n</property>\n\n<!--\n  KMS blacklists to prevent access to operations. These settings override the\n  permissions granted by the KMS ACLs above.\n\n  The blacklist value should be either a username or a username and group name\n  separated by whitespace.\n\n  A blank value indicates that no user is blacklisted from the operation. A\n  value of \"*\" (for either the username or groupname) indicates that all users\n  are blacklisted from the operation. Any operation for which there is no\n  blacklist will be treated as having a blacklist with an empty value.\n-->\n\n<!--\n  In this template the hdfs user is blacklisted for everything except\n  GET_METADATA, GET_KEYS, and GENERATE_EEK. The GET and SET_KEY_MATERIAL\n  operations are blacklisted for all users since Hadoop users should not\n  need to perform those operations, and access to the key material should\n  be as restricted as possible.\n-->\n\n<property>\n  <name>hadoop.kms.blacklist.CREATE</name>\n  <value>hdfs supergroup</value>\n</property>\n\n<property>\n  <name>hadoop.kms.blacklist.DELETE</name>\n  <value>hdfs supergroup</value>\n</property>\n\n<property>\n  <name>hadoop.kms.blacklist.ROLLOVER</name>\n  <value>hdfs supergroup</value>\n</property>\n\n<property>\n  <name>hadoop.kms.blacklist.GET</name>\n  <value>*</value>\n</property>\n\n<property>\n  <name>hadoop.kms.blacklist.GET_KEYS</name>\n  <value></value>\n</property>\n\n<property>\n  <name>hadoop.kms.blacklist.SET_KEY_MATERIAL</name>\n  <value>*</value>\n</property>\n\n<property>\n  <name>hadoop.kms.blacklist.DECRYPT_EEK</name>\n  <value>hdfs supergroup</value>\n</property>\n\n\n<!--\n  Default key ACLs that govern access to key operations for key-operation pairs\n  that do not have a specific key ACL already. Specific key ACLs will override\n  the default key ACLs\n\n  The ACL value should be either a username or a username and group name\n  separated by whitespace.\n\n  An empty value for an ACL indicates that no user is granted access to that\n  operation. A value of \"*\" (for the username or groupname) indicates that\n  all users are granted access to that operation. Any operation for which\n  there is no ACL will be treated as having an ACL with an empty value.\n-->\n\n<property>\n  <name>default.key.acl.MANAGEMENT</name>\n  <value></value>\n  <description>\n    Default ACL that grants access to the MANAGEMENT operation on all keys.\n  </description>\n</property>\n\n<property>\n  <name>default.key.acl.GENERATE_EEK</name>\n  <value></value>\n  <description>\n    Default ACL that grants access to the GENERATE_EEK operation on all keys.\n  </description>\n</property>\n\n<property>\n  <name>default.key.acl.DECRYPT_EEK</name>\n  <value></value>\n  <description>\n    Default ACL that grants access to the DECRYPT_EEK operation on all keys.\n  </description>\n</property>\n\n<property>\n  <name>default.key.acl.READ</name>\n  <value></value>\n  <description>\n    Default ACL that grants access to the READ operation on all keys.\n  </description>\n</property>\n\n<!--\n  Whitelist key ACLs that grant access to specific key operations. Any\n  permissions granted here will be added to whatever permissions are granted\n  by the specific key ACL or the default key ACL. Note that these whitelist\n  ACLs grant access to operations on specific keys. If the operations\n  themselves are not allowed because of the KMS ACLs/blacklists, then the\n  operation will not be permitted, regardless of the whitelist settings.\n\n  The ACL value should be either a username or a username and group name\n  separated by whitespace.\n\n  An empty value for an ACL indicates that no user is granted access to that\n  operation. A value of \"*\" (for the username or groupname) indicates that\n  all users are granted access to that operation. Any operation for which\n  there is no ACL will be treated as having an ACL with an empty value.\n-->\n\n<property>\n  <name>whitelist.key.acl.MANAGEMENT</name>\n  <value>nobody sentryadmin</value>\n  <description>\n    Whitelist ACL for MANAGEMENT operations for all keys.\n  </description>\n</property>\n\n<property>\n  <name>whitelist.key.acl.READ</name>\n  <value>hdfs supergroup</value>\n  <description>\n    Whitelist ACL for READ operations for all keys.\n  </description>\n</property>\n\n<property>\n  <name>whitelist.key.acl.GENERATE_EEK</name>\n  <value>hdfs supergroup</value>\n  <description>\n    Whitelist ACL for GENERATE_EEK operations for all keys.\n  </description>\n</property>\n\n<property>\n  <name>whitelist.key.acl.DECRYPT_EEK</name>\n  <value>nobody sentryadmin</value>\n  <description>\n    Whitelist ACL for DECRYPT_EEK operations for all keys.\n  </description>\n</property>\n\n<!--\n  Key ACLs that grant access to specific key operations. Any permissions\n  granted here are added to whatever permissions are granted by the whitelists.\n  The key ACL name should be key.acl.<keyname>.<OPERATION>.\n\n  The ACL value should be either a username or a username and group name\n  separated by whitespace.\n\n  An empty value for an ACL indicates that no user is granted access to that\n  operation. A value of \"*\" (for the username or groupname) indicates that\n  all users are granted access to that operation. Any key operation for which\n  there is no ACL will default to the default ACL for the operation.\n\n  Normally adding users or groups for a specific key and DECRYPT_EEK is\n  sufficient to allow access to data protected with HDFS data at rest\n  encryption.\n-->\n\n<!--\n  The following ACLs are required for proper functioning of services.\n  CM does not create keys or encryption zones, however our best practices\n  recommend encryption zones on certain directories. Below we assume that\n  the user has followed our recommended naming scheme and named the keys\n  according to our best practices: \"hive-key\" for the hive service,\n  \"hbase-key\" for the hbase service, etc. If the key names are different,\n  none of this will work out of the box, and you will need to edit these\n  ACLs to match your key names.\n-->\n\n<property>\n  <name>key.acl.hive-key.DECRYPT_EEK</name>\n  <value>hive hive</value>\n  <description>\n    Gives the hive user and the hive group access to the key named \"hive-key\".\n    This allows the hive service to read and write files in /user/hive/.\n    Also note that the impala user ought to be a member of the hive group\n    in order to enjoy this same access.\n  </description>\n</property>\n\n<property>\n  <name>key.acl.hive-key.READ</name>\n  <value>hive hive</value>\n  <description>\n    Required because hive compares key strengths when joining tables.\n  </description>\n</property>\n\n<property>\n  <name>key.acl.mapred-key.DECRYPT_EEK</name>\n  <value>mapred,yarn hadoop</value>\n  <description>\n    Gives the mapred user and mapred group access to the key named \"mapred-key\".\n    This allows mapreduce to read and write files in /user/history.\n    This is required by YARN.\n  </description>\n</property>\n\n<property>\n  <name>key.acl.hue-key.DECRYPT_EEK</name>\n  <value>oozie,hue oozie,hue</value>\n  <description>\n    Gives the appropriate users and groups access to the key named \"hue-key\".\n    This allows hue and oozie to read and write files in /user/hue.\n    Oozie is required here because it will attempt to access workflows in\n    /user/hue/oozie/workspaces.\n  </description>\n</property>\n\n\n\n<!-- This example is required if there are encryption zones on user's home\n     directories. -->\n<!--\n<property>\n  <name>key.acl.username-key.DECRYPT_EEK</name>\n  <value>username username,hive,hbase,solr,oozie,hue,yarn</value>\n  <description>\n    Designed to be placed on a key that protects the EZ /user/username,\n    and assumes that the key name is also \"username-key\", this shows that\n    a number of services may want to reach in to access data. Remove\n    those are are not needed for your use-case.\n  </description>\n</property>\n-->\n",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_client_truststore_location",
+            "value" : "/opt/cloudera/security/pki/truststore.jks",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_client_truststore_password",
+            "value" : "changeit",
+            "sensitive" : true
+          }, {
+            "name" : "ssl_enabled",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_keystore_location",
+            "value" : "/opt/cloudera/security/pki/keystore.jks",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_keystore_password",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "oozie",
+      "type" : "OOZIE",
+      "config" : {
+        "items" : [ {
+          "name" : "database_dump_file",
+          "value" : "/data/tmp/oozie_database_dump.zip",
+          "sensitive" : false
+        }, {
+          "name" : "hive_service",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "mapreduce_yarn_service",
+          "value" : "yarn",
+          "sensitive" : false
+        }, {
+          "name" : "oozie_use_ssl",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "spark_on_yarn_service",
+          "value" : "spark_on_yarn",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "oozie-OOZIE_SERVER-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "OOZIE_SERVER",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "4u7w2pjg0heljwws4mxo1rei3",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "oozie-OOZIE_SERVER-BASE"
+        }
+      } ],
+      "displayName" : "Oozie",
+      "roleConfigGroups" : [ {
+        "name" : "oozie-OOZIE_SERVER-BASE",
+        "displayName" : "Oozie Server Default Group",
+        "roleType" : "OOZIE_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "oozie"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_data_dir",
+            "value" : "/data/var/lib/oozie/data",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_database_host",
+            "value" : "ip-172-31-32-98.eu-west-1.compute.internal:7432",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_database_name",
+            "value" : "oozie_oozie_server1",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_database_password",
+            "value" : "tyEV1r2KPF",
+            "sensitive" : true
+          }, {
+            "name" : "oozie_database_user",
+            "value" : "oozie_oozie_server1",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_https_keystore_file",
+            "value" : "/opt/cloudera/security/pki/server.jks",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_https_keystore_password",
+            "value" : "cloudera",
+            "sensitive" : true
+          }, {
+            "name" : "oozie_https_truststore_file",
+            "value" : "/opt/cloudera/security/pki/truststore.jks",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_https_truststore_password",
+            "value" : "changeit",
+            "sensitive" : true
+          }, {
+            "name" : "oozie_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          }, {
+            "name" : "oozie_log_dir",
+            "value" : "/data/var/log/oozie",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "impala",
+      "type" : "IMPALA",
+      "config" : {
+        "items" : [ {
+          "name" : "client_services_ssl_enabled",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "hdfs_service",
+          "value" : "hdfs",
+          "sensitive" : false
+        }, {
+          "name" : "hive_service",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "llama_am_ha_zk_auth_secret_key",
+          "value" : "xxuXa2MTppUsuVAzddNissqfjdGVHd",
+          "sensitive" : true
+        }, {
+          "name" : "rm_dirty",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "sentry_service",
+          "value" : "sentry",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_client_ca_certificate",
+          "value" : "/opt/cloudera/security/pki/rootca.pem",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_private_key",
+          "value" : "/opt/cloudera/security/pki/agent.key",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_private_key_password",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "ssl_server_certificate",
+          "value" : "/opt/cloudera/security/pki/agent.pem",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "impala-CATALOGSERVER-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "CATALOGSERVER",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "c6oz3hvwexvuoexvo8x7akyay",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "impala-CATALOGSERVER-BASE"
+        }
+      }, {
+        "name" : "impala-IMPALAD-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "IMPALAD",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "8m4hcotxtjluo77jhs7u9rsem",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "impala-IMPALAD-BASE"
+        }
+      }, {
+        "name" : "impala-IMPALAD-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "IMPALAD",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "69caw2miviex1gl706d19rwy7",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "impala-IMPALAD-BASE"
+        }
+      }, {
+        "name" : "impala-IMPALAD-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "IMPALAD",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "bnqju177f1i21sz11mp29k7f7",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "impala-IMPALAD-BASE"
+        }
+      }, {
+        "name" : "impala-STATESTORE-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "STATESTORE",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "9lf2c6y5wvhwuvux9pfr45yvu",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "impala-STATESTORE-BASE"
+        }
+      } ],
+      "displayName" : "Impala",
+      "roleConfigGroups" : [ {
+        "name" : "impala-CATALOGSERVER-BASE",
+        "displayName" : "Impala Catalog Server Default Group",
+        "roleType" : "CATALOGSERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "impala"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "catalogd_embedded_jvm_heapsize",
+            "value" : "52428800",
+            "sensitive" : false
+          }, {
+            "name" : "core_dump_dir",
+            "value" : "/data/var/log/catalogd",
+            "sensitive" : false
+          }, {
+            "name" : "log_dir",
+            "value" : "/data/var/log/catalogd",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "minidump_path",
+            "value" : "/data/var/log/impala-minidumps",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_certificate_file",
+            "value" : "/opt/cloudera/security/pki/agent.pem",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_private_key_file",
+            "value" : "/opt/cloudera/security/pki/agent.key",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_private_key_password_cmd",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      }, {
+        "name" : "impala-IMPALAD-BASE",
+        "displayName" : "Impala Daemon Default Group",
+        "roleType" : "IMPALAD",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "impala"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "audit_event_log_dir",
+            "value" : "/data/var/log/impalad/audit",
+            "sensitive" : false
+          }, {
+            "name" : "core_dump_dir",
+            "value" : "/data/var/log/impalad",
+            "sensitive" : false
+          }, {
+            "name" : "disk_spill_encryption",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "enable_audit_event_log",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "impalad_memory_limit",
+            "value" : "268435456",
+            "sensitive" : false
+          }, {
+            "name" : "lineage_event_log_dir",
+            "value" : "/data/var/log/impalad/lineage",
+            "sensitive" : false
+          }, {
+            "name" : "log_dir",
+            "value" : "/data/var/log/impalad",
+            "sensitive" : false
+          }, {
+            "name" : "minidump_path",
+            "value" : "/data/var/log/impala-minidumps",
+            "sensitive" : false
+          }, {
+            "name" : "scratch_dirs",
+            "value" : "/data/impala/impalad",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_certificate_file",
+            "value" : "/opt/cloudera/security/pki/agent.pem",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_private_key_file",
+            "value" : "/opt/cloudera/security/pki/agent.key",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_private_key_password_cmd",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      }, {
+        "name" : "impala-LLAMA-BASE",
+        "displayName" : "Impala Llama ApplicationMaster Default Group",
+        "roleType" : "LLAMA",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "impala"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "llama_log_dir",
+            "value" : "/data/var/log/impala-llama",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "impala-STATESTORE-BASE",
+        "displayName" : "Impala StateStore Default Group",
+        "roleType" : "STATESTORE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "impala"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "core_dump_dir",
+            "value" : "/data/var/log/statestore",
+            "sensitive" : false
+          }, {
+            "name" : "log_dir",
+            "value" : "/data/var/log/statestore",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "minidump_path",
+            "value" : "/data/var/log/impala-minidumps",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_certificate_file",
+            "value" : "/opt/cloudera/security/pki/agent.pem",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_private_key_file",
+            "value" : "/opt/cloudera/security/pki/agent.key",
+            "sensitive" : false
+          }, {
+            "name" : "webserver_private_key_password_cmd",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "hue",
+      "type" : "HUE",
+      "config" : {
+        "items" : [ {
+          "name" : "auth_backend",
+          "value" : "desktop.auth.backend.LdapBackend",
+          "sensitive" : false
+        }, {
+          "name" : "base_dn",
+          "value" : "ou=People,dc=cloudera,dc=com",
+          "sensitive" : false
+        }, {
+          "name" : "database_host",
+          "value" : "ip-172-31-32-98.eu-west-1.compute.internal",
+          "sensitive" : false
+        }, {
+          "name" : "database_password",
+          "value" : "1wrGbL0Xze",
+          "sensitive" : true
+        }, {
+          "name" : "database_port",
+          "value" : "7432",
+          "sensitive" : false
+        }, {
+          "name" : "database_type",
+          "value" : "postgresql",
+          "sensitive" : false
+        }, {
+          "name" : "hive_service",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "hue_webhdfs",
+          "value" : "hdfs-NAMENODE-624a8149d561e58e99fdc10c055ccde5",
+          "sensitive" : false
+        }, {
+          "name" : "impala_service",
+          "value" : "impala",
+          "sensitive" : false
+        }, {
+          "name" : "ldap_cert",
+          "value" : "/opt/cloudera/security/pki/agent.pem",
+          "sensitive" : false
+        }, {
+          "name" : "ldap_url",
+          "value" : "ldap://ip-172-31-32-98.eu-west-1.compute.internal:389",
+          "sensitive" : false
+        }, {
+          "name" : "ldap_username_pattern",
+          "value" : "uid=<username>,ou=People,dc=cloudera,dc=com",
+          "sensitive" : false
+        }, {
+          "name" : "oozie_service",
+          "value" : "oozie",
+          "sensitive" : false
+        }, {
+          "name" : "search_bind_authentication",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "sentry_service",
+          "value" : "sentry",
+          "sensitive" : false
+        }, {
+          "name" : "service_config_suppression_hue_load_balancer_count_validator",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "service_health_suppression_hue_kt_renewers_healthy",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "use_start_tls",
+          "value" : "false",
+          "sensitive" : false
+        }, {
+          "name" : "user_name_attr",
+          "value" : "uid",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "hue-HUE_SERVER-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "HUE_SERVER",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "navmetadataserver_cmdb_password",
+            "value" : "bc36d989-a8d9-4201-84dd-e8afa500b3ab",
+            "sensitive" : true
+          }, {
+            "name" : "role_jceks_password",
+            "value" : "11go4425qilh0gwmo5f8dvxqx",
+            "sensitive" : true
+          }, {
+            "name" : "secret_key",
+            "value" : "Bt0csfuv33XzqmOqRxeKFGCixojWFb",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hue-HUE_SERVER-BASE"
+        }
+      }, {
+        "name" : "hue-KT_RENEWER-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "KT_RENEWER",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "ee6imdvi6wz7jromlw92umq4i",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hue-KT_RENEWER-BASE"
+        }
+      } ],
+      "displayName" : "Hue",
+      "roleConfigGroups" : [ {
+        "name" : "hue-HUE_LOAD_BALANCER-BASE",
+        "displayName" : "Load Balancer Default Group",
+        "roleType" : "HUE_LOAD_BALANCER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hue"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "log_directory_free_space_absolute_thresholds",
+            "value" : "{\"warning\":3221225472,\"critical\":1073741824}",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_certificate",
+            "value" : "/opt/cloudera/security/pki/agent.pem",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_certificate_key",
+            "value" : "/opt/cloudera/security/pki/agent_key.pem",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hue-HUE_SERVER-BASE",
+        "displayName" : "Hue Server Default Group",
+        "roleType" : "HUE_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hue"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "log_directory_free_space_absolute_thresholds",
+            "value" : "{\"warning\":3221225472,\"critical\":1073741824}",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_cacerts",
+            "value" : "/opt/cloudera/security/hue/hue_trustore.pem",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_certificate",
+            "value" : "/opt/cloudera/security/pki/agent.pem",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_enable",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_private_key",
+            "value" : "/opt/cloudera/security/pki/agent.key",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_private_key_password",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      }, {
+        "name" : "hue-KT_RENEWER-BASE",
+        "displayName" : "Kerberos Ticket Renewer Default Group",
+        "roleType" : "KT_RENEWER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hue"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "keytab_reinit_frequency",
+            "value" : "18000",
+            "sensitive" : false
+          }, {
+            "name" : "log_directory_free_space_absolute_thresholds",
+            "value" : "{\"warning\":3221225472,\"critical\":1073741824}",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "spark_on_yarn",
+      "type" : "SPARK_ON_YARN",
+      "config" : {
+        "items" : [ {
+          "name" : "spark_authenticate",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "yarn_service",
+          "value" : "yarn",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "spar40365358-SPARK_YARN_HISTORY_SERVER-7c0a4a77b37af65d8bd573c67",
+        "type" : "SPARK_YARN_HISTORY_SERVER",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "bgy0k95vw98tg2k2yvb2wvqbv",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark_on_yarn-SPARK_YARN_HISTORY_SERVER-BASE"
+        }
+      }, {
+        "name" : "spark_on_yarn-GATEWAY-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark_on_yarn-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "spark_on_yarn-GATEWAY-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark_on_yarn-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "spark_on_yarn-GATEWAY-7ef4d15a0de416d3728604a99cbe4e20",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark_on_yarn-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "spark_on_yarn-GATEWAY-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "spark_on_yarn-GATEWAY-BASE"
+        }
+      } ],
+      "displayName" : "Spark",
+      "roleConfigGroups" : [ {
+        "name" : "spark_on_yarn-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "spark_on_yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "lineage_event_log_dir",
+            "value" : "/data/var/log/spark/lineage",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "spark_io_encryption_enabled",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "spark_network_encryption_enabled",
+            "value" : "true",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "spark_on_yarn-SPARK_YARN_HISTORY_SERVER-BASE",
+        "displayName" : "History Server Default Group",
+        "roleType" : "SPARK_YARN_HISTORY_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "spark_on_yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "history_server_max_heapsize",
+            "value" : "67108864",
+            "sensitive" : false
+          }, {
+            "name" : "log_dir",
+            "value" : "/data/var/log/spark",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_enabled",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_keystore_location",
+            "value" : "/opt/cloudera/security/pki/server.jks",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_keystore_password",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "sentry",
+      "type" : "SENTRY",
+      "config" : {
+        "items" : [ {
+          "name" : "audit_event_log_dir",
+          "value" : "/data/var/log/sentry/audit",
+          "sensitive" : false
+        }, {
+          "name" : "hdfs_service",
+          "value" : "hdfs",
+          "sensitive" : false
+        }, {
+          "name" : "sentry_server_database_host",
+          "value" : "ip-172-31-32-98.eu-west-1.compute.internal",
+          "sensitive" : false
+        }, {
+          "name" : "sentry_server_database_password",
+          "value" : "dKM7No4ZDz",
+          "sensitive" : true
+        }, {
+          "name" : "sentry_server_database_port",
+          "value" : "7432",
+          "sensitive" : false
+        }, {
+          "name" : "sentry_server_database_type",
+          "value" : "postgresql",
+          "sensitive" : false
+        }, {
+          "name" : "sentry_service_admin_group",
+          "value" : "hive,impala,hue,solr,kafka,hbase,sentryadmin",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "sentry-SENTRY_SERVER-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "SENTRY_SERVER",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "c3neysiiuprar9uorg8sphqhd",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "sentry-SENTRY_SERVER-BASE"
+        }
+      } ],
+      "displayName" : "Sentry",
+      "roleConfigGroups" : [ {
+        "name" : "sentry-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "sentry"
+        },
+        "config" : {
+          "items" : [ ]
+        }
+      }, {
+        "name" : "sentry-SENTRY_SERVER-BASE",
+        "displayName" : "Sentry Server Default Group",
+        "roleType" : "SENTRY_SERVER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "sentry"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "sentry_server_java_heapsize",
+            "value" : "268435456",
+            "sensitive" : false
+          }, {
+            "name" : "sentry_server_log_dir",
+            "value" : "/data/var/log/sentry",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "yarn",
+      "type" : "YARN",
+      "config" : {
+        "items" : [ {
+          "name" : "hadoop_secure_web_ui",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "hdfs_service",
+          "value" : "hdfs",
+          "sensitive" : false
+        }, {
+          "name" : "hdfs_user_home_dir",
+          "value" : "/data/var/lib/hadoop-yarn",
+          "sensitive" : false
+        }, {
+          "name" : "rm_dirty",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_client_truststore_location",
+          "value" : "/opt/cloudera/security/pki/truststore.jks",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_client_truststore_password",
+          "value" : "changeit",
+          "sensitive" : true
+        }, {
+          "name" : "ssl_server_keystore_keypassword",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "ssl_server_keystore_location",
+          "value" : "/opt/cloudera/security/pki/server.jks",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_server_keystore_password",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "yarn_admin_acl",
+          "value" : "yarn cdh_users",
+          "sensitive" : false
+        }, {
+          "name" : "zk_authorization_secret_key",
+          "value" : "WEBk90g2hPHhW9pJ0WrSAaDBnzdAXn",
+          "sensitive" : true
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "yarn-JOBHISTORY-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "JOBHISTORY",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "efufn9uckag3fm22luqfsm12y",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-JOBHISTORY-BASE"
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "NODEMANAGER",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "8cbicbg8hw23uzspisl7z6g0k",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-NODEMANAGER-BASE"
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "NODEMANAGER",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "1dk8irlvwg7q5ed26vhen01c9",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-NODEMANAGER-BASE"
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "NODEMANAGER",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "gw793sd88a9w4ib6oy0y7qbo",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-NODEMANAGER-BASE"
+        }
+      }, {
+        "name" : "yarn-RESOURCEMANAGER-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "RESOURCEMANAGER",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "rm_id",
+            "value" : "56",
+            "sensitive" : false
+          }, {
+            "name" : "role_jceks_password",
+            "value" : "7ua2ujzive5s4unq71rrzmypb",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "yarn-RESOURCEMANAGER-BASE"
+        }
+      } ],
+      "displayName" : "YARN (MR2 Included)",
+      "roleConfigGroups" : [ {
+        "name" : "yarn-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hadoop_job_history_dir",
+            "value" : "/data/var/log/hadoop-mapreduce/history",
+            "sensitive" : false
+          }, {
+            "name" : "mapred_reduce_tasks",
+            "value" : "6",
+            "sensitive" : false
+          }, {
+            "name" : "mapred_submit_replication",
+            "value" : "3",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "yarn-JOBHISTORY-BASE",
+        "displayName" : "JobHistory Server Default Group",
+        "roleType" : "JOBHISTORY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "mr2_jobhistory_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          }, {
+            "name" : "mr2_jobhistory_log_dir",
+            "value" : "/data/var/log/hadoop-mapreduce",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "yarn-NODEMANAGER-BASE",
+        "displayName" : "NodeManager Default Group",
+        "roleType" : "NODEMANAGER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "container_executor_min_user_id",
+            "value" : "0",
+            "sensitive" : false
+          }, {
+            "name" : "node_manager_log_dir",
+            "value" : "/data/var/log/hadoop-yarn",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_heartbeat_interval_ms",
+            "value" : "100",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_local_dirs",
+            "value" : "/data/yarn/nm",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_log_dirs",
+            "value" : "/data/yarn/container-logs",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_recovery_dir",
+            "value" : "/data/var/lib/hadoop-yarn/yarn-nm-recovery",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_resource_cpu_vcores",
+            "value" : "4",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_nodemanager_resource_memory_mb",
+            "value" : "5949",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "yarn-RESOURCEMANAGER-BASE",
+        "displayName" : "ResourceManager Default Group",
+        "roleType" : "RESOURCEMANAGER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "yarn"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "resource_manager_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          }, {
+            "name" : "resource_manager_log_dir",
+            "value" : "/data/var/log/hadoop-yarn",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_scheduler_maximum_allocation_mb",
+            "value" : "5949",
+            "sensitive" : false
+          }, {
+            "name" : "yarn_scheduler_maximum_allocation_vcores",
+            "value" : "4",
+            "sensitive" : false
+          } ]
+        }
+      } ]
+    }, {
+      "name" : "hdfs",
+      "type" : "HDFS",
+      "config" : {
+        "items" : [ {
+          "name" : "audit_event_log_dir",
+          "value" : "/data/var/log/hadoop-hdfs/audit",
+          "sensitive" : false
+        }, {
+          "name" : "dfs_encrypt_data_transfer",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "dfs_encrypt_data_transfer_algorithm",
+          "value" : "AES/CTR/NoPadding",
+          "sensitive" : false
+        }, {
+          "name" : "dfs_ha_fencing_cloudera_manager_secret_key",
+          "value" : "YpbATeYTgPnWTz7lBbyManiyLdUgUO",
+          "sensitive" : true
+        }, {
+          "name" : "dfs_namenode_acls_enabled",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "dfs_permissions_supergroup",
+          "value" : "hadoop",
+          "sensitive" : false
+        }, {
+          "name" : "dfs_umaskmode",
+          "value" : "026",
+          "sensitive" : false
+        }, {
+          "name" : "fc_authorization_secret_key",
+          "value" : "xLcIcdN29UtKcjqgV0yxfgn7YkYmLL",
+          "sensitive" : true
+        }, {
+          "name" : "hadoop_rpc_protection",
+          "value" : "privacy",
+          "sensitive" : false
+        }, {
+          "name" : "hadoop_secure_web_ui",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "hadoop_security_authentication",
+          "value" : "kerberos",
+          "sensitive" : false
+        }, {
+          "name" : "hadoop_security_authorization",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "hdfs_hadoop_ssl_enabled",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "hdfs_sentry_sync_enable",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "http_auth_signature_secret",
+          "value" : "8J5W4vZoymXO6RNAI0blrXX03KXI1B",
+          "sensitive" : true
+        }, {
+          "name" : "kms_service",
+          "value" : "keytrustee",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_client_truststore_location",
+          "value" : "/opt/cloudera/security/pki/truststore.jks",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_client_truststore_password",
+          "value" : "changeit",
+          "sensitive" : true
+        }, {
+          "name" : "ssl_server_keystore_keypassword",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "ssl_server_keystore_location",
+          "value" : "/opt/cloudera/security/pki/server.jks",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_server_keystore_password",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "hdfs-BALANCER-7ef4d15a0de416d3728604a99cbe4e20",
+        "type" : "BALANCER",
+        "hostRef" : {
+          "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-BALANCER-BASE"
+        }
+      }, {
+        "name" : "hdfs-DATANODE-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "DATANODE",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "eiq6122etpbh71r0obz1pbl0c",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-DATANODE-BASE"
+        }
+      }, {
+        "name" : "hdfs-DATANODE-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "DATANODE",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "c7gfjmk008108gxvd2ltj9d2a",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-DATANODE-BASE"
+        }
+      }, {
+        "name" : "hdfs-DATANODE-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "DATANODE",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "7o5rt3tw3bpj9viplfew9cj1h",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-DATANODE-BASE"
+        }
+      }, {
+        "name" : "hdfs-NAMENODE-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "NAMENODE",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "namenode_id",
+            "value" : "62",
+            "sensitive" : false
+          }, {
+            "name" : "role_jceks_password",
+            "value" : "765ide869jkezkv6hgyid13eq",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-NAMENODE-BASE"
+        }
+      }, {
+        "name" : "hdfs-SECONDARYNAMENODE-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "SECONDARYNAMENODE",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "dn8o0qtwdsi818uso5e01xrkk",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hdfs-SECONDARYNAMENODE-BASE"
+        }
+      } ],
+      "displayName" : "HDFS",
+      "roleConfigGroups" : [ {
+        "name" : "hdfs-BALANCER-BASE",
+        "displayName" : "Balancer Default Group",
+        "roleType" : "BALANCER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "balancer_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-DATANODE-BASE",
+        "displayName" : "DataNode Default Group",
+        "roleType" : "DATANODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "datanode_log_dir",
+            "value" : "/data/var/log/hadoop-hdfs",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_data_dir_list",
+            "value" : "/data/dfs/dn",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_data_dir_perm",
+            "value" : "700",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_du_reserved",
+            "value" : "4214145024",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_http_port",
+            "value" : "1006",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_datanode_port",
+            "value" : "1004",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-FAILOVERCONTROLLER-BASE",
+        "displayName" : "Failover Controller Default Group",
+        "roleType" : "FAILOVERCONTROLLER",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "failover_controller_log_dir",
+            "value" : "/data/var/log/hadoop-hdfs",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "dfs_client_use_trash",
+            "value" : "true",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-HTTPFS-BASE",
+        "displayName" : "HttpFS Default Group",
+        "roleType" : "HTTPFS",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "httpfs_log_dir",
+            "value" : "/data/var/log/hadoop-httpfs",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-JOURNALNODE-BASE",
+        "displayName" : "JournalNode Default Group",
+        "roleType" : "JOURNALNODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-NAMENODE-BASE",
+        "displayName" : "NameNode Default Group",
+        "roleType" : "NAMENODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "dfs_name_dir_list",
+            "value" : "/data/dfs/nn",
+            "sensitive" : false
+          }, {
+            "name" : "dfs_namenode_servicerpc_address",
+            "value" : "8022",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "namenode_blockstatechange_log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "namenode_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          }, {
+            "name" : "namenode_log_dir",
+            "value" : "/data/var/log/hadoop-hdfs",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "role_config_suppression_namenode_java_heapsize_minimum_validator",
+            "value" : "true",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-NFSGATEWAY-BASE",
+        "displayName" : "NFS Gateway Default Group",
+        "roleType" : "NFSGATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "nfsgateway_log_dir",
+            "value" : "/data/var/log/hadoop-hdfs",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hdfs-SECONDARYNAMENODE-BASE",
+        "displayName" : "SecondaryNameNode Default Group",
+        "roleType" : "SECONDARYNAMENODE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hdfs"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "fs_checkpoint_dir_list",
+            "value" : "/data/dfs/snn",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "secondary_namenode_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          }, {
+            "name" : "secondarynamenode_log_dir",
+            "value" : "/data/var/log/hadoop-hdfs",
+            "sensitive" : false
+          } ]
+        }
+      } ],
+      "replicationSchedules" : [ ],
+      "snapshotPolicies" : [ ]
+    }, {
+      "name" : "hive",
+      "type" : "HIVE",
+      "config" : {
+        "items" : [ {
+          "name" : "audit_event_log_dir",
+          "value" : "/data/var/log/hive/audit",
+          "sensitive" : false
+        }, {
+          "name" : "hive_metastore_database_host",
+          "value" : "ip-172-31-32-98.eu-west-1.compute.internal",
+          "sensitive" : false
+        }, {
+          "name" : "hive_metastore_database_name",
+          "value" : "hive",
+          "sensitive" : false
+        }, {
+          "name" : "hive_metastore_database_password",
+          "value" : "FooJiJRcf0",
+          "sensitive" : true
+        }, {
+          "name" : "hive_metastore_database_port",
+          "value" : "7432",
+          "sensitive" : false
+        }, {
+          "name" : "hive_metastore_database_type",
+          "value" : "postgresql",
+          "sensitive" : false
+        }, {
+          "name" : "hive_proxy_user_groups_list",
+          "value" : "hive,hue,sentry",
+          "sensitive" : false
+        }, {
+          "name" : "hiveserver2_enable_ssl",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "hiveserver2_keystore_password",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "hiveserver2_keystore_path",
+          "value" : "/opt/cloudera/security/pki/server.jks",
+          "sensitive" : false
+        }, {
+          "name" : "hiveserver2_truststore_file",
+          "value" : "/opt/cloudera/security/pki/truststore.jks",
+          "sensitive" : false
+        }, {
+          "name" : "hiveserver2_truststore_password",
+          "value" : "changeit",
+          "sensitive" : true
+        }, {
+          "name" : "lineage_event_log_dir",
+          "value" : "/data/var/log/hive/lineage",
+          "sensitive" : false
+        }, {
+          "name" : "mapreduce_yarn_service",
+          "value" : "yarn",
+          "sensitive" : false
+        }, {
+          "name" : "sentry_service",
+          "value" : "sentry",
+          "sensitive" : false
+        }, {
+          "name" : "spark_on_yarn_service",
+          "value" : "spark_on_yarn",
+          "sensitive" : false
+        }, {
+          "name" : "zookeeper_service",
+          "value" : "zookeeper",
+          "sensitive" : false
+        } ]
+      },
+      "roles" : [ {
+        "name" : "hive-GATEWAY-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hive-GATEWAY-7c0a4a77b37af65d8bd573c676fbd9a0",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hive-GATEWAY-7ef4d15a0de416d3728604a99cbe4e20",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hive-GATEWAY-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "GATEWAY",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-GATEWAY-BASE"
+        }
+      }, {
+        "name" : "hive-HIVEMETASTORE-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "HIVEMETASTORE",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "c62tz7552uomet2xf8tgsz0px",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-HIVEMETASTORE-BASE"
+        }
+      }, {
+        "name" : "hive-HIVESERVER2-ae70068f38289b4e6fa62115fbfecd74",
+        "type" : "HIVESERVER2",
+        "hostRef" : {
+          "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "role_jceks_password",
+            "value" : "clfx804zj1lizmsnrc68zjlx4",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-HIVESERVER2-BASE"
+        }
+      }, {
+        "name" : "hive-WEBHCAT-624a8149d561e58e99fdc10c055ccde5",
+        "type" : "WEBHCAT",
+        "hostRef" : {
+          "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hive_webhcat_secret_key",
+            "value" : "ePv6F58dsqoXYw5dj1i1jYetE4t9i9",
+            "sensitive" : true
+          }, {
+            "name" : "role_jceks_password",
+            "value" : "4580dqf6adtwvrqgj046w3itp",
+            "sensitive" : true
+          } ]
+        },
+        "roleConfigGroupRef" : {
+          "roleConfigGroupName" : "hive-WEBHCAT-BASE"
+        }
+      } ],
+      "displayName" : "Hive",
+      "roleConfigGroups" : [ {
+        "name" : "hive-GATEWAY-BASE",
+        "displayName" : "Gateway Default Group",
+        "roleType" : "GATEWAY",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hive-HIVEMETASTORE-BASE",
+        "displayName" : "Hive Metastore Server Default Group",
+        "roleType" : "HIVEMETASTORE",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hive_enable_db_notification",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "hive_log_dir",
+            "value" : "/data/var/log/hive",
+            "sensitive" : false
+          }, {
+            "name" : "hive_metastore_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      }, {
+        "name" : "hive-HIVESERVER2-BASE",
+        "displayName" : "HiveServer2 Default Group",
+        "roleType" : "HIVESERVER2",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hive_log_dir",
+            "value" : "/data/var/log/hive",
+            "sensitive" : false
+          }, {
+            "name" : "hive_server2_logging_operation_log_location",
+            "value" : "/data/var/log/hive/operation_logs",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_enable_impersonation",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_java_heapsize",
+            "value" : "637534208",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_driver_memory",
+            "value" : "966367641",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_executor_cores",
+            "value" : "4",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_executor_memory",
+            "value" : "5302281830",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_yarn_driver_memory_overhead",
+            "value" : "102",
+            "sensitive" : false
+          }, {
+            "name" : "hiveserver2_spark_yarn_executor_memory_overhead",
+            "value" : "892",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_enabled",
+            "value" : "true",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_keystore_location",
+            "value" : "/opt/cloudera/security/pki/server.jks",
+            "sensitive" : false
+          }, {
+            "name" : "ssl_server_keystore_password",
+            "value" : "cloudera",
+            "sensitive" : true
+          } ]
+        }
+      }, {
+        "name" : "hive-WEBHCAT-BASE",
+        "displayName" : "WebHCat Server Default Group",
+        "roleType" : "WEBHCAT",
+        "base" : true,
+        "serviceRef" : {
+          "clusterName" : "cluster",
+          "serviceName" : "hive"
+        },
+        "config" : {
+          "items" : [ {
+            "name" : "hcatalog_log_dir",
+            "value" : "/data/var/log/hcatalog",
+            "sensitive" : false
+          }, {
+            "name" : "log_threshold",
+            "value" : "WARN",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_dir",
+            "value" : "/data/tmp",
+            "sensitive" : false
+          }, {
+            "name" : "oom_heap_dump_enabled",
+            "value" : "false",
+            "sensitive" : false
+          } ]
+        }
+      } ],
+      "replicationSchedules" : [ ]
+    } ],
+    "parcels" : [ {
+      "product" : "CDH",
+      "version" : "5.14.2-1.cdh5.14.2.p0.3",
+      "stage" : "DISTRIBUTED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    }, {
+      "product" : "KEYTRUSTEE",
+      "version" : "5.14.0-1.KEYTRUSTEE5.14.0.p0.208446",
+      "stage" : "DISTRIBUTED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    }, {
+      "product" : "CDH",
+      "version" : "5.14.2-1.cdh5.14.2.p0.3",
+      "stage" : "ACTIVATED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    }, {
+      "product" : "KEYTRUSTEE",
+      "version" : "5.14.0-1.KEYTRUSTEE5.14.0.p0.208446",
+      "stage" : "ACTIVATED",
+      "clusterRef" : {
+        "clusterName" : "cluster"
+      }
+    } ],
+    "uuid" : "7aa49913-2fab-4ad5-9026-5b65cceded10"
+  } ],
+  "hosts" : [ {
+    "hostId" : "d0b10964-2b9e-4b37-8b7c-29e69fc70155",
+    "ipAddress" : "172.31.32.115",
+    "hostname" : "ip-172-31-32-115.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8",
+    "ipAddress" : "172.31.32.98",
+    "hostname" : "ip-172-31-32-98.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "d0f49d57-7e39-4851-8aa8-4e6bfcf60908",
+    "ipAddress" : "172.31.39.122",
+    "hostname" : "ip-172-31-39-122.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "13822b85-446b-414e-bf4c-b66613624e0f",
+    "ipAddress" : "172.31.39.251",
+    "hostname" : "ip-172-31-39-251.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "87ca6e39-5539-4aa8-90ca-2be10c8ab98d",
+    "ipAddress" : "172.31.41.182",
+    "hostname" : "ip-172-31-41-182.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "8107b016-ed8b-448e-b5c8-27022dc2d335",
+    "ipAddress" : "172.31.42.73",
+    "hostname" : "ip-172-31-42-73.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "6b34905b-c221-4e5b-865d-9a377d9235e7",
+    "ipAddress" : "172.31.43.155",
+    "hostname" : "ip-172-31-43-155.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  }, {
+    "hostId" : "45d0c250-e977-41b4-bda5-b3894cf12541",
+    "ipAddress" : "172.31.46.237",
+    "hostname" : "ip-172-31-46-237.eu-west-1.compute.internal",
+    "rackId" : "/default",
+    "config" : {
+      "items" : [ ]
+    }
+  } ],
+  "users" : [ {
+    "name" : "__cloudera_internal_user__hue-HUE_SERVER-624a8149d561e58e99fdc10c055ccde5",
+    "roles" : [ "ROLE_NAVIGATOR_ADMIN" ],
+    "pwHash" : "01f1f01a7c5f710145363059e306894dcc3ccebfb0eb50d388a485a764fb40ae",
+    "pwSalt" : -595368662963865547,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__hue-HUE_SERVER-ae70068f38289b4e6fa62115fbfecd74",
+    "roles" : [ "ROLE_NAVIGATOR_ADMIN" ],
+    "pwHash" : "e92780637842c9cb200e155f1f6cb0809e520e09dc0c6d2fd9e0ee39d11cb7b8",
+    "pwSalt" : -6391843867510078761,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-ACTIVITYMONITOR-7ef4d15a0de416d3728604a99cbe4e20",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "943c57fd55df968bcd84bbe889e5bfc4b45c631b1ec86af5e6168f7d650976a7",
+    "pwSalt" : -3761710060051616545,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-EVENTSERVER-7ef4d15a0de416d3728604a99cbe4e20",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "5ed3aba207b02a0e38d93cea8deb8cd51b74f57b71a7bb22b67b061947c3a0f7",
+    "pwSalt" : -5516024747856855139,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-HOSTMONITOR-7ef4d15a0de416d3728604a99cbe4e20",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "811221187e1bcad5cbc76d699b2b9af547ef307782698885899a97ffff9eaa49",
+    "pwSalt" : 7734772085869538058,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-NAVIGATOR-7ef4d15a0de416d3728604a99cbe4e20",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "0ff68734e1220d0082e2cedb38b364ea4b811433b1be4afbb4a3789bf08bf681",
+    "pwSalt" : -3806058538975685914,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-NAVIGATORMETASERVER-7ef4d15a0de416d3728604a99cbe4e20",
+    "roles" : [ "ROLE_ADMIN" ],
+    "pwHash" : "a6b588800b3209dfba5943536d4d92ba60c6b0729aaa35ea210db90a22de4b06",
+    "pwSalt" : -7063757819700646611,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-REPORTSMANAGER-7ef4d15a0de416d3728604a99cbe4e20",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "7b96a31779bdc910520f2aabf6893dfaab88698165b060988a287da0b499cab5",
+    "pwSalt" : -774343501947441075,
+    "pwLogin" : true
+  }, {
+    "name" : "__cloudera_internal_user__mgmt-SERVICEMONITOR-7ef4d15a0de416d3728604a99cbe4e20",
+    "roles" : [ "ROLE_USER" ],
+    "pwHash" : "b119916bd10980a5b2813a087c1e842f73d8c6bf2bf0b27eb1d756a1b85298f9",
+    "pwSalt" : 4056920332983799739,
+    "pwLogin" : true
+  }, {
+    "name" : "admin",
+    "roles" : [ "ROLE_ADMIN" ],
+    "pwHash" : "62f5fdff14d450d0c5234998426d651f27a5ee25b1fc11f675ad8f5ed17b1201",
+    "pwSalt" : -2725783508206170330,
+    "pwLogin" : true
+  }, {
+    "name" : "bootcamper1",
+    "pwHash" : "4c1bb9dfabac03df2405a432e7c6a008518ec3caebfaef8736dbe8afa4a1fd05",
+    "pwSalt" : 7831961165359018962,
+    "pwLogin" : false
+  }, {
+    "name" : "hdfs",
+    "pwHash" : "39369ef4509072db59a0b653c408dc5b063881be7d38d3d54550fb6951b7f6d6",
+    "pwSalt" : 6905919525764062413,
+    "pwLogin" : false
+  }, {
+    "name" : "user1",
+    "pwHash" : "ff3e198ff712a1fd119d46e5e5e5adda8ae965bf5079fde8baaee6a043b4da06",
+    "pwSalt" : 2115223694908151548,
+    "pwLogin" : false
+  } ],
+  "versionInfo" : {
+    "version" : "5.14.3",
+    "buildUser" : "jenkins",
+    "buildTimestamp" : "20180414-0409",
+    "gitHash" : "7f2725eea4edeb1d184a2888db790d332167b6f8",
+    "snapshot" : false
+  },
+  "managementService" : {
+    "name" : "mgmt",
+    "type" : "MGMT",
+    "config" : {
+      "items" : [ {
+        "name" : "ssl_client_truststore_location",
+        "value" : "/opt/cloudera/security/pki/truststore.jks",
+        "sensitive" : false
+      }, {
+        "name" : "ssl_client_truststore_password",
+        "value" : "changeit",
+        "sensitive" : true
+      } ]
+    },
+    "roles" : [ {
+      "name" : "mgmt-ACTIVITYMONITOR-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "ACTIVITYMONITOR",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "1shvemhnnxcarpcupt15c3xfz",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-ACTIVITYMONITOR-BASE"
+      }
+    }, {
+      "name" : "mgmt-ALERTPUBLISHER-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "ALERTPUBLISHER",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "becfe7jo9ajwh8cnabuf5t35b",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-ALERTPUBLISHER-BASE"
+      }
+    }, {
+      "name" : "mgmt-EVENTSERVER-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "EVENTSERVER",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "akbx40sv33hsajf2wb06rmvbv",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-EVENTSERVER-BASE"
+      }
+    }, {
+      "name" : "mgmt-HOSTMONITOR-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "HOSTMONITOR",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "b8xkju5qp7ax5bpgszykmc71h",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-HOSTMONITOR-BASE"
+      }
+    }, {
+      "name" : "mgmt-NAVIGATOR-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "NAVIGATOR",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "dvb1rnaoz5xh5wxp58fhkecwg",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-NAVIGATOR-BASE"
+      }
+    }, {
+      "name" : "mgmt-NAVIGATORMETASERVER-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "NAVIGATORMETASERVER",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "9zrve0aevp3ycdv7ajhv6ju6o",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-NAVIGATORMETASERVER-BASE"
+      }
+    }, {
+      "name" : "mgmt-REPORTSMANAGER-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "REPORTSMANAGER",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "4uvsjmpfdus2h0omgsh4khtad",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-REPORTSMANAGER-BASE"
+      }
+    }, {
+      "name" : "mgmt-SERVICEMONITOR-7ef4d15a0de416d3728604a99cbe4e20",
+      "type" : "SERVICEMONITOR",
+      "hostRef" : {
+        "hostId" : "0b21c04b-c307-4b0a-b7e3-12fabbce90b8"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "role_jceks_password",
+          "value" : "atjzw9lvubd2h61rbm1165w8s",
+          "sensitive" : true
+        } ]
+      },
+      "roleConfigGroupRef" : {
+        "roleConfigGroupName" : "mgmt-SERVICEMONITOR-BASE"
+      }
+    } ],
+    "displayName" : "Cloudera Management Service",
+    "roleConfigGroups" : [ {
+      "name" : "mgmt-ACTIVITYMONITOR-BASE",
+      "displayName" : "Activity Monitor Default Group",
+      "roleType" : "ACTIVITYMONITOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "firehose_database_host",
+          "value" : "ip-172-31-32-98.eu-west-1.compute.internal:7432",
+          "sensitive" : false
+        }, {
+          "name" : "firehose_database_name",
+          "value" : "amon",
+          "sensitive" : false
+        }, {
+          "name" : "firehose_database_password",
+          "value" : "eXw4r6Ylhi",
+          "sensitive" : true
+        }, {
+          "name" : "firehose_database_type",
+          "value" : "postgresql",
+          "sensitive" : false
+        }, {
+          "name" : "firehose_database_user",
+          "value" : "amon",
+          "sensitive" : false
+        }, {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-firehose",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-ALERTPUBLISHER-BASE",
+      "displayName" : "Alert Publisher Default Group",
+      "roleType" : "ALERTPUBLISHER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-alertpublisher",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-EVENTSERVER-BASE",
+      "displayName" : "Event Server Default Group",
+      "roleType" : "EVENTSERVER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "eventserver_index_dir",
+          "value" : "/data/var/lib/cloudera-scm-eventserver",
+          "sensitive" : false
+        }, {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-eventserver",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-HOSTMONITOR-BASE",
+      "displayName" : "Host Monitor Default Group",
+      "roleType" : "HOSTMONITOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "firehose_storage_dir",
+          "value" : "/data/var/lib/cloudera-host-monitor",
+          "sensitive" : false
+        }, {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-firehose",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        }, {
+          "name" : "role_config_suppression_firehose_host_monitor_heap_role_validator",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "role_config_suppression_firehose_host_monitor_non_java_memory_role_validator",
+          "value" : "true",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-NAVIGATOR-BASE",
+      "displayName" : "Navigator Audit Server Default Group",
+      "roleType" : "NAVIGATOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-navigator",
+          "sensitive" : false
+        }, {
+          "name" : "navigator_database_host",
+          "value" : "ip-172-31-32-98.eu-west-1.compute.internal:7432",
+          "sensitive" : false
+        }, {
+          "name" : "navigator_database_password",
+          "value" : "64hk8pgcmU",
+          "sensitive" : true
+        }, {
+          "name" : "navigator_database_type",
+          "value" : "postgresql",
+          "sensitive" : false
+        }, {
+          "name" : "navigator_truststore_file",
+          "value" : "/opt/cloudera/security/pki/truststore.jks",
+          "sensitive" : false
+        }, {
+          "name" : "navigator_truststore_password",
+          "value" : "changeit",
+          "sensitive" : true
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_enabled",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_server_keystore_keypassword",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "ssl_server_keystore_location",
+          "value" : "/opt/cloudera/security/pki/server.jks",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_server_keystore_password",
+          "value" : "cloudera",
+          "sensitive" : true
+        } ]
+      }
+    }, {
+      "name" : "mgmt-NAVIGATORMETASERVER-BASE",
+      "displayName" : "Navigator Metadata Server Default Group",
+      "roleType" : "NAVIGATORMETASERVER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "audit_event_log_dir",
+          "value" : "/data/var/log/cloudera-scm-navigator/audit",
+          "sensitive" : false
+        }, {
+          "name" : "auth_backend_order",
+          "value" : "EXTERNAL_THEN_CM",
+          "sensitive" : false
+        }, {
+          "name" : "data_dir",
+          "value" : "/data/var/lib/cloudera-scm-navigator",
+          "sensitive" : false
+        }, {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-navigator",
+          "sensitive" : false
+        }, {
+          "name" : "nav_ldap_bind_dn",
+          "value" : "cn=ldapadm,dc=cloudera,dc=com",
+          "sensitive" : false
+        }, {
+          "name" : "nav_ldap_bind_pw",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "nav_ldap_dn_pattern",
+          "value" : "uid={0},ou=People,dc=cloudera,dc=com",
+          "sensitive" : false
+        }, {
+          "name" : "nav_ldap_group_search_base",
+          "value" : "dc=cloudera,dc=com",
+          "sensitive" : false
+        }, {
+          "name" : "nav_ldap_groups_search_filter",
+          "value" : "(&(objectClass=memberUid)(cn=*{0}*))",
+          "sensitive" : false
+        }, {
+          "name" : "nav_ldap_url",
+          "value" : "ldap://ip-172-31-32-98.eu-west-1.compute.internal",
+          "sensitive" : false
+        }, {
+          "name" : "nav_ldap_user_search_base",
+          "value" : "ou=People,dc=cloudera,dc=com",
+          "sensitive" : false
+        }, {
+          "name" : "nav_metaserver_database_host",
+          "value" : "ip-172-31-32-98.eu-west-1.compute.internal:7432",
+          "sensitive" : false
+        }, {
+          "name" : "nav_metaserver_database_password",
+          "value" : "SRiDhIIBhO",
+          "sensitive" : true
+        }, {
+          "name" : "nav_metaserver_database_type",
+          "value" : "postgresql",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_enabled",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_server_keystore_keypassword",
+          "value" : "cloudera",
+          "sensitive" : true
+        }, {
+          "name" : "ssl_server_keystore_location",
+          "value" : "/opt/cloudera/security/pki/server.jks",
+          "sensitive" : false
+        }, {
+          "name" : "ssl_server_keystore_password",
+          "value" : "cloudera",
+          "sensitive" : true
+        } ]
+      }
+    }, {
+      "name" : "mgmt-REPORTSMANAGER-BASE",
+      "displayName" : "Reports Manager Default Group",
+      "roleType" : "REPORTSMANAGER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "headlamp_database_host",
+          "value" : "ip-172-31-32-98.eu-west-1.compute.internal:7432",
+          "sensitive" : false
+        }, {
+          "name" : "headlamp_database_name",
+          "value" : "rman",
+          "sensitive" : false
+        }, {
+          "name" : "headlamp_database_password",
+          "value" : "ucfsDhHWkL",
+          "sensitive" : true
+        }, {
+          "name" : "headlamp_database_type",
+          "value" : "postgresql",
+          "sensitive" : false
+        }, {
+          "name" : "headlamp_database_user",
+          "value" : "rman",
+          "sensitive" : false
+        }, {
+          "name" : "headlamp_scratch_dir",
+          "value" : "/data/var/lib/cloudera-scm-headlamp",
+          "sensitive" : false
+        }, {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-headlamp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-SERVICEMONITOR-BASE",
+      "displayName" : "Service Monitor Default Group",
+      "roleType" : "SERVICEMONITOR",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ {
+          "name" : "firehose_storage_dir",
+          "value" : "/data/var/lib/cloudera-service-monitor",
+          "sensitive" : false
+        }, {
+          "name" : "mgmt_log_dir",
+          "value" : "/data/var/log/cloudera-scm-firehose",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_dir",
+          "value" : "/data/tmp",
+          "sensitive" : false
+        }, {
+          "name" : "oom_heap_dump_enabled",
+          "value" : "false",
+          "sensitive" : false
+        }, {
+          "name" : "role_config_suppression_firehose_service_monitor_heap_role_validator",
+          "value" : "true",
+          "sensitive" : false
+        }, {
+          "name" : "role_config_suppression_firehose_service_monitor_non_java_memory_role_validator",
+          "value" : "true",
+          "sensitive" : false
+        } ]
+      }
+    }, {
+      "name" : "mgmt-TELEMETRYPUBLISHER-BASE",
+      "displayName" : "Telemetry Publisher Default Group",
+      "roleType" : "TELEMETRYPUBLISHER",
+      "base" : true,
+      "serviceRef" : {
+        "serviceName" : "mgmt"
+      },
+      "config" : {
+        "items" : [ ]
+      }
+    } ]
+  },
+  "managerSettings" : {
+    "items" : [ {
+      "name" : "AD_USE_SIMPLE_AUTH",
+      "value" : "false",
+      "sensitive" : false
+    }, {
+      "name" : "AGENT_TLS",
+      "value" : "true",
+      "sensitive" : false
+    }, {
+      "name" : "AUTH_BACKEND_ORDER",
+      "value" : "LDAP_ONLY",
+      "sensitive" : false
+    }, {
+      "name" : "CLUSTER_STATS_START",
+      "value" : "10/27/2012 3:20",
+      "sensitive" : false
+    }, {
+      "name" : "KDC_ADMIN_HOST",
+      "value" : "ip-172-31-32-98.eu-west-1.compute.internal",
+      "sensitive" : false
+    }, {
+      "name" : "KDC_ADMIN_PASSWORD",
+      "value" : "BQIAAABbAAIAE0FELlNFQy5DTE9VREVSQS5DT00ACmJvb3RjYW1wZXIABWFkbWluAAAAAVsfwKkBABIAIBY0I4mJ7+cbJGfezs50atExob6hAsMvDLknDSDT4hKAAAAAAQAAAEsAAgATQUQuU0VDLkNMT1VERVJBLkNPTQAKYm9vdGNhbXBlcgAFYWRtaW4AAAABWx/AqQEAEQAQd09JwcyaX2avz+JjLuGYvgAAAAEAAABLAAIAE0FELlNFQy5DTE9VREVSQS5DT00ACmJvb3RjYW1wZXIABWFkbWluAAAAAVsfwKkBABcAEOiX/BhZDvIkN04fZL/YVbUAAAAB",
+      "sensitive" : true
+    }, {
+      "name" : "KDC_ADMIN_USER",
+      "value" : "bootcamper/admin@AD.SEC.CLOUDERA.COM",
+      "sensitive" : false
+    }, {
+      "name" : "KDC_HOST",
+      "value" : "ip-172-31-32-98.eu-west-1.compute.internal",
+      "sensitive" : false
+    }, {
+      "name" : "KEYSTORE_PASSWORD",
+      "value" : "cloudera",
+      "sensitive" : true
+    }, {
+      "name" : "KEYSTORE_PATH",
+      "value" : "/opt/cloudera/security/pki/server.jks",
+      "sensitive" : false
+    }, {
+      "name" : "KRB_ENC_TYPES",
+      "value" : "aes256-cts aes128-cts rc4-hmac",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_ADMIN_GROUPS",
+      "value" : "cmadmin",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_DN_PATTERN",
+      "value" : "uid={0},ou=People,dc=cloudera,dc=com",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_GROUP_SEARCH_BASE",
+      "value" : "dc=cloudera,dc=com",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_NAVIGATOR_ADMIN_GROUPS",
+      "value" : "cmadmin",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_TYPE",
+      "value" : "LDAP",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_URL",
+      "value" : "ldap://ip-172-31-32-98.eu-west-1.compute.internal",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_USER_GROUPS",
+      "value" : "",
+      "sensitive" : false
+    }, {
+      "name" : "LDAP_USER_SEARCH_BASE",
+      "value" : "ou=People,dc=cloudera,dc=com",
+      "sensitive" : false
+    }, {
+      "name" : "LICENSE_KEY",
+      "value" : "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA256\n\n{\r\n  \"features\" : [ ],\r\n  \"name\" : \"Michael_Ernest_2018_2019\",\r\n  \"uuid\" : \"93626282-c48d-40ec-9f0c-9da5dfceca74\",\r\n  \"version\" : 1,\r\n  \"expirationDate\" : \"2019-05-30\"\r\n}\r\n-----BEGIN PGP SIGNATURE-----\nVersion: BCPG v1.46\n\niQIcBAEBCAAGBQJbDvytAAoJECXwRXLmH8tl0RAP/2h8v0jgglAYjlQ2MkTJ2rjS\nz+h5F9oh/kUIo0h4Wr8txucvfdAkJDpciq4pUm7O4/q7AANX/nRvfJ7w7vo1eg5t\nIN9JljOUoWQOwvpANrKlUx+q+DA8KqGuicbkph28mitkTWA6xAGmxxCsD894Mn2a\nI9JmTgxWVmTvIbgm0TAW59znPhCNnPmbmFFze9CKHbWsQX8obvgW05g+v9T7oie9\n3yWlgETmbBnwbDa+N+v7SjlluPASkPcyRHatP1lmfumVanosooJL6xDqN+j5E+wz\n+ege/i3kjZOG4OskWqOO/uFjg4w0CIOXh5Uf7hVexh8Hm54KwGPbAETROLPigabm\nfGL1e/LodmAZd+V1WU9WNlbDieCc805XTrwfEEcVSvuwWWmp5LlJ1dNQcPbr89Oz\ndDECoz6YonQoc5dIxIGwNqoDHlpr5CKKW5yFhdloAs2EhaSVqz5mPzZ8Mv86ZjeI\nt5tm8bN6KkWMTim/Spiu1EkdzkCNSU6WKoiC+VXtQsIEk+VRuOLH3QxI19sJ6NJP\n6CPDeKKStTK2fzrWqT5x+ayHJ3ZhKXjMTkZgJViQJzmjkSc2GY5ztqHGh/ZUT192\nkdqAXlz7eb3x9LMqMe5OHL9oT0O5OWXLgvg3hRVYnsHKbxf9kxaXiFxNX3pzYPhE\ncaTpMDQTR3QGDNXFmwtC\n=0MLW\n-----END PGP SIGNATURE-----\n",
+      "sensitive" : true
+    }, {
+      "name" : "MAX_RENEW_LIFE",
+      "value" : "604800",
+      "sensitive" : false
+    }, {
+      "name" : "NEED_AGENT_VALIDATION",
+      "value" : "true",
+      "sensitive" : false
+    }, {
+      "name" : "PARCEL_UPDATE_FREQ",
+      "value" : "1",
+      "sensitive" : false
+    }, {
+      "name" : "PUBLIC_CLOUD_STATUS",
+      "value" : "ON_PUBLIC_CLOUD",
+      "sensitive" : false
+    }, {
+      "name" : "REMOTE_PARCEL_REPO_URLS",
+      "value" : "https://archive.cloudera.com/cdh5/parcels/{latest_supported}/,https://archive.cloudera.com/cdh4/parcels/latest/,https://archive.cloudera.com/impala/parcels/latest/,https://archive.cloudera.com/search/parcels/latest/,https://archive.cloudera.com/accumulo/parcels/1.4/,https://archive.cloudera.com/accumulo-c5/parcels/latest/,https://archive.cloudera.com/kafka/parcels/latest/,http://archive.cloudera.com/kudu/parcels/latest/,https://archive.cloudera.com/spark/parcels/latest/,https://archive.cloudera.com/sqoop-connectors/parcels/latest/",
+      "sensitive" : false
+    }, {
+      "name" : "SECURITY_REALM",
+      "value" : "AD.SEC.CLOUDERA.COM",
+      "sensitive" : false
+    }, {
+      "name" : "TRUSTSTORE_PASSWORD",
+      "value" : "changeit",
+      "sensitive" : true
+    }, {
+      "name" : "TRUSTSTORE_PATH",
+      "value" : "/usr/java/jdk1.7.0_67-cloudera/jre/lib/security/jssecacerts",
+      "sensitive" : false
+    }, {
+      "name" : "WEB_TLS",
+      "value" : "true",
+      "sensitive" : false
+    } ]
+  },
+  "allHostsConfig" : {
+    "items" : [ ]
+  },
+  "peers" : [ ],
+  "hostTemplates" : {
+    "items" : [ ]
+  }
+}
